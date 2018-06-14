@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class SolutionJava8Resources {
+public class VoteSolutionJava8Resources {
   public static void main(String args[]) {
     String[] listaVotes = { "Victor", "Veronica", "Ryan", "Dave", "Maria", "Maria","Farah", "Farah", "Ryan", "Veronica" };
     System.out.println(electionWinner(listaVotes));

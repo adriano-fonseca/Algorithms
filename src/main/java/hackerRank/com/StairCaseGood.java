@@ -2,7 +2,7 @@ package hackerRank.com;
 
 public class StairCaseGood {
   public static void main(String args[]) {
-    StairCase(6);
+    StairCase(9);
   }
 
   static void StairCase(int n) {
@@ -13,8 +13,8 @@ public class StairCaseGood {
     int nrSpaces = n-currentStep; //5
     int nrSimbol = currentStep; //1
     if(currentStep<n){
-    printStep(nrSpaces,nrSimbol);
-    printLadder(currentStep+1,n);
+    	printStep(nrSpaces,nrSimbol);
+    	printLadder(currentStep+1,n);
     }else{
       return;
     }
@@ -33,7 +33,6 @@ public class StairCaseGood {
     }else{
       return;
     }
-    
   }
 
 }

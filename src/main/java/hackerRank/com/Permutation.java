@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllPossibleWordFromString {
+public class Permutation {
 
   public static void main(String[] args) throws IOException {
     buildSubsequences("abc");
