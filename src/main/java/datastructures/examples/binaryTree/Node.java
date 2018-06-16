@@ -1,15 +1,22 @@
-package hackerRank.com.binarytree;
+package datastructures.examples.binaryTree;
 
 public class Node {
 	int key;
 	String name;
+	int data;
 
-	Node leftChild;
-	Node rightChild;
+	Node left;
+	Node right;
 
 	public Node(int key, String name) {
 		this.key = key;
 		this.name = name;
+	}
+	
+	public Node(int key, int data, String name) {
+		this.key = key;
+		this.name = name;
+		this.data = data;
 	}
 
 	@Override
