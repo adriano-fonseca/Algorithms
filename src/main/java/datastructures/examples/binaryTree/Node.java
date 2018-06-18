@@ -4,6 +4,7 @@ public class Node {
 	int key;
 	String name;
 	int data;
+	int   height;
 
 	Node left;
 	Node right;

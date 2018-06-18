@@ -132,5 +132,30 @@ public class UtilArray {
       System.out.println("a[" + y + "]=" + myArray[y]);
     }
   }
+  
+//Reverse the indent values in the array
+	// so that they go from biggest to smallest
+	public static int[] reverseArray(int[] theArray) {
+
+		// Index of the first element
+		int leftIndex = 0;
+
+		// Index of last element
+		int rightIndex = theArray.length - 1;
+
+		while (leftIndex < rightIndex) {
+			// Exchange the left and right elements
+			int temp = theArray[leftIndex];
+			theArray[leftIndex] = theArray[rightIndex];
+			theArray[rightIndex] = temp;
+
+			// Move the indexes to check towards the middle
+			leftIndex++;
+			rightIndex--;
+		}
+
+		return theArray;
+	}
+
 
 }
