@@ -1,4 +1,4 @@
-package hackerRank.com.test;
+package rackerRank.com;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,6 @@
-package util;
+package sort.algoritms.example;
+
+import util.UtilArray;
 
 public class LinearSearch {
 

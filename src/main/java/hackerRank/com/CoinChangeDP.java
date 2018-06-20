@@ -1,3 +1,4 @@
+package hackerRank.com;
 
 public class CoinChangeDP {
 

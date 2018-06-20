@@ -1,4 +1,4 @@
-package util;
+package sort.algoritms.example;
 
 public class MergeSort {
 
