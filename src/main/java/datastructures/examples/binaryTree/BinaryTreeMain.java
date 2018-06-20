@@ -11,14 +11,17 @@ public class BinaryTreeMain {
 		theTree.addNode(25, 25, "Vice President");
 
 		theTree.addNode(15, 15,  "Office Manager");
-
+		
+		theTree.addNode(10, 10,  "Office Assistent");
 		theTree.addNode(30, 30, "Secretary");
-
 		theTree.addNode(75, 75, "Sales Manager");
 
 		theTree.addNode(85, 85, "Salesman 1");
+//		theTree.addNode(95, 95, "Salesman 2");
+//		theTree.addNode(195, 195, "Salesman 3");
+
 		
-		theTree.root.left.left = new Node(35, 35, "Teste");
+		//theTree.root.left.left = new Node(35, 35, "Teste");
 
 		// Different ways to traverse binary trees
 
@@ -42,6 +45,8 @@ public class BinaryTreeMain {
 
 		theTree.inOrderTraverseTree(theTree.root);
 		*/
-		System.out.println(theTree.isValidBST());
+		//System.out.println(theTree.isValidBST());
+		//System.out.println(theTree.getDepth());
+		theTree.printTree2();
 	}
 }

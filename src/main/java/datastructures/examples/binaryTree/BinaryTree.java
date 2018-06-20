@@ -1,5 +1,9 @@
 package datastructures.examples.binaryTree;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class BinaryTree {
 
 	Node root;
@@ -41,6 +45,179 @@ public class BinaryTree {
 		}
 	}
 	
+	public int getDepth(){
+		return depth(this.root, 0);
+	}
+	
+	private int depth(Node root, int depth) {
+		if(root==null) return 0;
+		int depthLeft = this.depth(root.left, depth);
+		int depthRight = this.depth(root.right, depth);
+		return Math.max(depthLeft, depthRight) + 1;
+	}
+	
+	private Node rotateWithLeftChild(Node k2)
+    {
+        System.out.println("Left Rotation Performed");
+        Node k1 = k2.left;
+        k2.left = k1.right;
+        k1.right = k2;
+        k2.height = Math.max(height(k2.left), height(k2.right)) + 1;
+        k1.height = Math.max(height(k1.left), k2.height) + 1;
+        return k1;
+    }
+	
+	private int height(Node t){
+	 
+	        return t == null ? -1 : t.height;
+	}
+ 
+    private Node rotateWithRightChild(Node k1)
+    {
+        //System.out.println("Right Rotation Performed");
+    	Node k2 = k1.right;
+        k1.right = k2.left;
+        k2.left = k1;
+        k1.height = Math.max(height(k1.left), height(k1.right)) + 1;
+        k2.height = Math.max(height(k2.right), k1.height) + 1;
+        return k2;
+    }
+
+    
+    public Integer[] getArrayFormat(){
+     	return extractValues(this.root).toArray(new Integer[] {});
+    }
+    
+    
+    private static List<Integer> extractValues(Node n) {
+        List<Integer> result = new ArrayList<>();
+        result.add(n.data);
+        
+        if (n.left != null) {
+            result.addAll(extractValues(n.left));
+        }
+
+        if (n.right != null) {
+            result.addAll(extractValues(n.right));
+        }
+
+        
+        return result;
+    }
+    
+    
+    public void printTree2() {
+
+		// Number of spaces between items in tree
+
+		int spaces = 0;
+
+		int iteration = 1;
+
+		// Generate all of the indents that are
+		// needed depending on the number of rows
+		// to print
+		int rows = this.getDepth();
+
+		int[] indent = getIndentArray(this.getDepth());
+
+		while (iteration <= rows) {
+
+			// Find first Index : .5 * (-2 + 2^n)
+
+			int indexToPrint = (int) (.5 * (-2 + (Math.pow(2, iteration))));
+
+			// Number of Items per Row : 2^(n - 1)
+
+			int itemsPerRow = (int) (Math.pow(2, iteration - 1));
+
+			int maxIndexToPrint = indexToPrint + itemsPerRow;
+
+			// Print the indents needed
+
+			for (int j = 0; j < indent[iteration - 1]; j++)
+				System.out.print(" ");
+
+			// Print all of the index values for each row
+			// indexToPrint represents the first index in the
+			// row, while maxIndexToPrint equals the last
+
+			for (int l = indexToPrint; l < maxIndexToPrint; l++) {
+
+				// If the array isn't full don't try to print
+				// indexes that don't exist
+				//TODO: retornar numeros de nos
+				if (l < 7) {
+
+					System.out.print(String.format("%02d", this.getArrayFormat()[l]));
+
+					for (int k = 0; k < spaces; k++)
+						System.out.print(" ");
+
+				}
+
+			}
+
+			// In a tree the spaces get bigger in the
+			// same way that indents get smaller
+
+			spaces = indent[iteration - 1];
+
+			iteration++;
+
+			System.out.println();
+
+		}
+
+	}
+
+	// Calculate each indent per row for the tree
+	// then reverse their order to go from biggest
+	// to smallest
+
+	public int[] getIndentArray(int rows) {
+
+		int[] indentArray = new int[rows];
+
+		for (int i = 0; i < rows; i++) {
+
+			indentArray[i] = (int) Math.abs((-2 + (Math.pow(2, i + 1))));
+
+		}
+
+		Arrays.sort(indentArray);
+
+		indentArray = reverseArray(indentArray);
+
+		return indentArray;
+
+	}
+
+	// Reverse the indent values in the array
+	// so that they go from biggest to smallest
+
+	public int[] reverseArray(int[] theArray) {
+
+		// Index of the first element
+		int leftIndex = 0;
+
+		// Index of last element
+		int rightIndex = theArray.length - 1;
+
+		while (leftIndex < rightIndex) {
+			// Exchange the left and right elements
+			int temp = theArray[leftIndex];
+			theArray[leftIndex] = theArray[rightIndex];
+			theArray[rightIndex] = temp;
+
+			// Move the indexes to check towards the middle
+			leftIndex++;
+			rightIndex--;
+		}
+
+		return theArray;
+	}
+    
 	public void addNode(int key, int data, String name) {
 
 		Node newNode = new Node(key, data, name);
