@@ -1,4 +1,4 @@
-package hackerRank.com;
+package com.hackerrank;
 
 public class Solution {
 	static void countSwaps(int[] a) {

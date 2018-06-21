@@ -1,4 +1,4 @@
-package rackerRank.com;
+package com.hackerrank;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import org.apache.commons.io.LineIterator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import hackerRank.com.LeftRotationRecursion;
+import com.hackerrank.LeftRotationRecursion;
 
 //@RunWith(XMLParameterizedRunner.class)
 public class RecursiveStairCaseTest {

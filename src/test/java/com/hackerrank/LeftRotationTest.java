@@ -1,9 +1,9 @@
-package rackerRank.com;
+package com.hackerrank;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import hackerRank.com.LeftRotationRecursion;
+import com.hackerrank.LeftRotationRecursion;
 
 public class LeftRotationTest {
   

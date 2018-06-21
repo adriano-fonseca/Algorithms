@@ -1,4 +1,4 @@
-package hackerRank.com;
+package com.hackerrank;
 
 import java.io.IOException;
 import java.util.ArrayList;

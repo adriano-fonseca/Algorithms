@@ -1,4 +1,4 @@
-package hackerRank.com;
+package com.hackerrank;
 
 public class StairCaseBad {
   public static void main(String args[]){
