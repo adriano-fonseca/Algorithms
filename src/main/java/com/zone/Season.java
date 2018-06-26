@@ -2,11 +2,35 @@ package com.zone;
 
 import java.time.Month;
 
+/**
+ * @author adriano-fonseca
+ * 
+ * Spring -> South Hemisphere -> SEP, OCT
+ * 			 
+ * 			 North Hemisphere -> MAR, APR
+ * 
+ *
+ * Summer -> North Hemisphere -> MAY, JUN, JUL, AUG 
+ * 			
+ * 			 South Hemisphere -> NOV, DEC, JAN, FEB
+ * 
+ *
+ * Fall -> South Hemisphere -> MAR, APR
+ * 			 
+ * 		   North Hemisphere -> SEP, OCT
+ * 			 
+ * 
+ * Winter -> South Hemisphere -> MAY, JUN, JUL, AUG
+ * 			 
+ * 			 North Hemisphere -> NOV, DEC, JAN, FEB
+ * 
+ * 
+ */
 public enum Season {
     SPRING, SUMMER, FALL, WINTER;
 	
 	
-    static public Season of( Month month, Hemisphere hemisphere) {
+    static public Season of(Month month, Hemisphere hemisphere) {
         switch ( month ) {
 
             // Spring in the north
