@@ -31,11 +31,9 @@ public enum Season {
 	
 	
     static public Season of(Month month, Hemisphere hemisphere) {
-        switch ( month ) {
+        switch  (month) {
 
-            // Spring in the north
-            // Fall in the South
-            case MARCH:
+        	case MARCH:
             	if(Hemisphere.SOUTH.equals(hemisphere)) {
             		return Season.FALL;
             	}
@@ -47,8 +45,6 @@ public enum Season {
             	}
                 return Season.SPRING;
 
-            // Winter in the south
-            // Summer in the north
             case MAY:
             	if(Hemisphere.SOUTH.equals(hemisphere)) {
             		return Season.WINTER;
@@ -73,8 +69,6 @@ public enum Season {
             	}
                 return Season.SUMMER;
 
-            // Fall in the North 
-            // Spring in the South
             case SEPTEMBER:
             	if(Hemisphere.SOUTH.equals(hemisphere)) {
             		return Season.SPRING;
@@ -87,8 +81,6 @@ public enum Season {
             	}
                 return Season.FALL;
 
-            // Winter in the north
-            // Summer in the south
             case NOVEMBER:
             	if(Hemisphere.SOUTH.equals(hemisphere)) {
             		return Season.SUMMER;
@@ -114,7 +106,6 @@ public enum Season {
                 return Season.WINTER;
 
             default:
-            	// FIXME: Handle reaching impossible point as error condition.
                 System.out.println ( "ERROR: IMPOSSIBLE TO DEFINE THE SEASON" );  
                 return null;
         }
